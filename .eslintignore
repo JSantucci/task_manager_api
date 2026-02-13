@@ -1,0 +1,12 @@
+dist/
+node_modules/
+coverage/
+build/
+.turbo/
+.parcel-cache/
+.next/
+.vite/
+*.log
+.env
+.env.*.local
+.cache/

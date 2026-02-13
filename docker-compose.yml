@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+    api:
+        build: .
+        ports:
+            - '5000:5000'
+        environment:
+            - MONGO_URI=mongodb://mongo:27017/task_manager
+            - JWT_SECRET=your_jwt_secret
+        depends_on:
+            - mongo
+            - mongo_test
+        command: node dist/server.js
+    mongo:
+        image: mongo:6
+        restart: always
+        ports:
+            - '27017:27017'
+        volumes:
+            - mongo_data:/data/db
+    mongo_test:
+        image: mongo:6
+        restart: always
+        ports:
+            - '27018:27017'
+        volumes:
+            - mongo_test_data:/data/db
+volumes:
+    mongo_data:
+    mongo_test_data:
