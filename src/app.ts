@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import { setupSwagger } from './config/swagger/index.ts';
 import apiRouterV1 from './api/v1.0/index.ts';
 import { API_VERSION } from './utils/getEnv.ts';
@@ -13,6 +14,7 @@ app.use(
 	}),
 );
 app.use(express.json());
+app.use(cookieParser());
 
 setupSwagger(app, API_VERSION);
 
