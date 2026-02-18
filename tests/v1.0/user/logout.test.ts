@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import logout from '../../../src/api/v1.0/user/logout';
 import User from '../../../src/models/User';
+import type { IUser } from '../../../src/interfaces/User';
+import type { HydratedDocument } from 'mongoose';
 
 vi.mock('../../../src/models/User', () => ({
 	default: {
@@ -33,7 +35,7 @@ describe('Logout Unit Tests', () => {
 		const userMock = {
 			revokeRefreshToken: vi.fn().mockReturnValue(true),
 			save: vi.fn().mockResolvedValue(undefined),
-		} as any;
+		} as unknown as HydratedDocument<IUser>;
 		vi.mocked(User.findOne).mockResolvedValueOnce(userMock);
 
 		const req = { cookies: { refreshToken: 'token' } } as Partial<Request>;

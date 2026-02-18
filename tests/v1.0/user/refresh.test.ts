@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { res as baseRes } from '../../utils/unitTestSetup';
 import refresh from '../../../src/api/v1.0/user/refresh';
 import User from '../../../src/models/User';
+import { HydratedDocument } from 'mongoose';
+import { IUser } from '../../../src/interfaces/User';
 
 vi.mock('../../../src/models/User', () => ({
 	default: {
@@ -53,7 +54,7 @@ describe('Refresh Unit Tests', () => {
 			save: vi.fn().mockResolvedValue(undefined),
 			_id: 'userId',
 			username: 'user',
-		} as any;
+		} as unknown as HydratedDocument<IUser>;
 		vi.mocked(User.findOne).mockResolvedValueOnce(userMock);
 
 		const req = {
