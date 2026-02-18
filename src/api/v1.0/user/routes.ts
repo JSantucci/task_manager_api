@@ -10,7 +10,7 @@ const authLimiter = createRateLimiter({ max: 1000 });
 
 /**
  * @swagger
- * /api/register:
+ * /register:
  *   post:
  *     summary: Register a new user
  *     tags: [User]

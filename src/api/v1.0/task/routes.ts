@@ -15,7 +15,7 @@ const taskLimiter = createRateLimiter({ max: 10000 });
 taskRouter.use(taskLimiter);
 /**
  * @swagger
- * /api/task:
+ * /task:
  *   get:
  *     summary: Get all tasks
  *     tags: [Task]
@@ -37,7 +37,7 @@ taskRouter.get('/', asyncHandler(getAllTasks));
 
 /**
  * @swagger
- * /api/task/{id}:
+ * /task/{id}:
  *   get:
  *     summary: Get a task by ID
  *     tags: [Task]
@@ -65,7 +65,7 @@ taskRouter.get('/:id', validateTaskId, asyncHandler(getTask));
 
 /**
  * @swagger
- * /api/task:
+ * /task:
  *   post:
  *     summary: Create a new task
  *     tags: [Task]
@@ -101,7 +101,7 @@ taskRouter.post('/', validateCreateTask, asyncHandler(createTask));
 
 /**
  * @swagger
- * /api/task/{id}:
+ * /task/{id}:
  *   put:
  *     summary: Update a task by ID
  *     tags: [Task]
@@ -135,7 +135,7 @@ taskRouter.put('/:id', validateTaskId, validateUpdateTask, asyncHandler(updateTa
 
 /**
  * @swagger
- * /api/task/{id}:
+ * /task/{id}:
  *   delete:
  *     summary: Delete a task by ID
  *     tags: [Task]

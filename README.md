@@ -55,6 +55,10 @@ Create a `.env` for local development or `.env.test` for tests. The app will thr
 - `JWT_SECRET` — secret used to sign JWTs
 - `API_VERSION` — API major version (e.g. `1.0`)
 
+Optional environment variable:
+
+- `CORS_ORIGIN` — allowed frontend origin for credentialed CORS requests (default `http://localhost:5173`)
+
 Tip for tests: Put test-specific values in `.env.test`. Unit tests sometimes set `AUTH_SKIP_DB=true` to avoid DB lookups in the auth middleware.
 
 **Quick Start**
