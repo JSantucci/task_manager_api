@@ -10,7 +10,7 @@
 
 > A production-ready, highly maintainable RESTful API built with **TypeScript, Express, and MongoDB**. Engineered with strict software principles: versioned API routes, JWT authentication, end-to-end integration testing via `mongodb-memory-server`, Docker orchestration, automated CI/CD workflows, and interactive OpenAPI/Swagger documentation.
 
----
+> 🔗 Frontend APP Repository: [JSantucci/task_manager_app](https://github.com/JSantucci/task_manager_app)
 
 ## 🌟 Key Engineering Highlights
 
@@ -21,8 +21,6 @@
 * 📦 **Containerized Development:** Fully configured `docker-compose` environment for single-command setup.
 * 📖 **Automated API Documentation:** Interactive Swagger interface dynamically generated from JSDoc route annotations.
 * 🛡️ **Strict Code Standards:** Pre-commit validation hooks via **Husky**, `lint-staged`, and conventional commit enforceability (`commitlint`).
-
----
 
 ## 📑 Table of contents
 
